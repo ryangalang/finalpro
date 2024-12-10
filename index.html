@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Interface with AJAX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Add this style to center the title */
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+
+        /* You can also add other general styles for better alignment */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .section-container {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        /* Add background color to table headers */
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        /* Specific styling for table headers */
+        table th {
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+        }
+
+        /* Optional: Alternate row colors */
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dynamic Web Interface</h1>
+
+    <!-- User Info Section -->
+    <div class="section-container">
+        <div class="form-container">
+            <h3>User Info</h3>
+            <form id="userForm">
+                <input type="text" id="name" placeholder="Enter Name" required><br><br>
+                <input type="email" id="email" placeholder="Enter Email" required><br><br>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+        <h2>Users List</h2>
+        <div id="loading" style="display:none;">Loading...</div>
+        <table id="usersTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Student Info Section -->
+    <div class="section-container">
+        <div class="form-container">
+            <h3>Student Info</h3>
+            <form id="studentForm">
+                <input type="text" id="studentName" placeholder="Enter Student Name" required><br><br>
+                <input type="text" id="studentNumber" placeholder="Enter Student Number" required><br><br>
+                <input type="text" id="section" placeholder="Enter Section" required><br><br>
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+        <h2>Students List</h2>
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student Number</th>
+                    <th>Section</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Movie Info Section -->
+    <div class="section-container">
+        <div class="form-container">
+            <h3>Movie Info</h3>
+            <form id="movieForm">
+                <input type="text" id="movieTitle" placeholder="Enter Movie Title" required><br><br>
+                <input type="text" id="movieGenre" placeholder="Enter Movie Genre" required><br><br>
+                <button type="submit">Add Movie</button>
+            </form>
+        </div>
+        <h2>Movies List</h2>
+        <table id="moviesTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Movie data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
